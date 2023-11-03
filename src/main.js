@@ -3,21 +3,18 @@ import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter'
 import { $ } from './select';
+import { logo } from './components/logo';
+import { counter } from './components/counter';
 
 const app = $('#app');
 
 app.innerHTML = `
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
+    ${logo("https://vitejs.dev", viteLogo, "Vite logo")}
+    ${logo("https://www.typescriptlang.org/", typescriptLogo, "TypeScript logo")}
+   
     <h1>FACE TO FACE</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
+    ${counter()}
     <p class="read-the-docs">
       Click on the Vite and TypeScript logos to learn more
     </p>
